@@ -17,8 +17,8 @@ class Calculator
     return dividend / divisor
   end
 
-  def sqaure(number)
-    return square * square
+  def square(number)
+    return number * number
   end
 
   def power(number, exponent)
@@ -47,6 +47,41 @@ RSpec.describe Calculator do
       calculator = Calculator.new
       result = calculator.add(-3,-6)
       expect(result).to eq(-9)
+    end
+  end
+  describe '#subtract' do
+    it 'should return the difference of two numbers' do
+      calculator = Calculator.new
+      result = calculator.subtract(12, 5)
+      expect(result).to eq(7)
+    end
+  end
+  describe '#multiply' do
+    it 'should return the product of two numbers' do
+      calculator = Calculator.new
+      result = calculator.multiply(12, 5)
+      expect(result).to eq(60)
+    end
+  end
+  describe '#divide' do
+    it 'should return the quotient of two numbers' do
+      calculator = Calculator.new
+      result = calculator.divide(12, 6)
+      expect(result).to eq(2)
+    end
+  end
+  describe '#square' do
+    it 'should return the square of a number' do
+      calculator = Calculator.new
+      result = calculator.square(5)
+      expect(result).to eq(25)
+    end
+  end
+  describe '#power' do
+    it 'should return the power of a given number' do
+      calculator = Calculator.new
+      result = calculator.power(3,4)
+      expect(result).to eq(81)
     end
   end
 end
